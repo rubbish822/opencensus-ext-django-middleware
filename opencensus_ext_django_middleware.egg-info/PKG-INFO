@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: opencensus-ext-django-middleware
-Version: 0.1
+Version: 0.1.2
 Summary: opencensus-ext-django-middleware
 Home-page: https://github.com/goupper/opencensus-ext-django-middleware
 Author: ivan

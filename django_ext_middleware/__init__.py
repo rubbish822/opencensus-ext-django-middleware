@@ -8,7 +8,7 @@
 @email:chongwuwy@163.com
 """
 __title__ = 'opencensus-ext-django-middleware'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __author__ = 'ivan'
 __license__ = 'BSD 2-Clause'
 __copyright__ = 'Copyright 2019-2025 ivan'

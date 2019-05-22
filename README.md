@@ -29,7 +29,7 @@ the ``MIDDLEWARE_CLASSES`` section in the Django ``settings.py`` file.
 
     MIDDLEWARE_CLASSES = [
         ...
-        'opencensus-ext-django-middleware.django.middleware.OpencensusMiddleware',
+        'django_ext_middleware.middleware.OpencensusMiddleware',
     ]
 
 And add this line to the ``INSTALLED_APPS`` section:

@@ -1,8 +1,8 @@
 README.md
 setup.py
-django/__init__.py
-django/middleware.py
-django/utils.py
+django_ext_middleware/__init__.py
+django_ext_middleware/middleware.py
+django_ext_middleware/utils.py
 opencensus_ext_django_middleware.egg-info/PKG-INFO
 opencensus_ext_django_middleware.egg-info/SOURCES.txt
 opencensus_ext_django_middleware.egg-info/dependency_links.txt
