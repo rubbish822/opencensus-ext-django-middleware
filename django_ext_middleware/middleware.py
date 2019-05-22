@@ -99,24 +99,27 @@ def _set_django_attributes(span, request):
     """Set the django related attributes."""
     django_user = getattr(request, 'user', None)
 
-    if django_user is None:
-        return
+    if django_user:
+        # maybe django_user is dict or other, you can override the method
+        try:
+            user_id = django_user.pk
+            user_name = django_user.get_username()
+        except (AttributeError, Exception, ) as e:
+            log.error(str(e))
+        else:
+            user_info = django_user
+            if user_id is not None:
+                # User id is the django autofield for User model as the primary key
+                span.add_attribute('django.user.id', str(user_id))
 
-    user_id = django_user.pk
-    user_name = django_user.get_username()
-    user_info = django_user
+            if user_name is not None:
+                span.add_attribute('django.user.name', str(user_name))
+            if user_info is not None:
+                span.add_attribute('django.user_info', str(user_info))
 
     data = dict(request.POST)
     params = dict(request.GET)
 
-    # User id is the django autofield for User model as the primary key
-    if user_id is not None:
-        span.add_attribute('django.user.id', str(user_id))
-
-    if user_name is not None:
-        span.add_attribute('django.user.name', str(user_name))
-    if user_info is not None:
-        span.add_attribute('django.user_info', str(user_info))
     if data is not None:
         span.add_attribute('django.request.data', str(data))
     if params is not None:
