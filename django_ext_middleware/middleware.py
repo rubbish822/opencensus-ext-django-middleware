@@ -26,7 +26,7 @@ from opencensus.trace.samplers import probability
 from .utils import import_from_string
 
 try:
-    from django_ext_middleware.utils.deprecation import MiddlewareMixin
+    from django.utils.deprecation import MiddlewareMixin
 except ImportError:  # pragma: NO COVER
     MiddlewareMixin = object
 
