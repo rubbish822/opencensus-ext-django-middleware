@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='opencensus-ext-django-middleware',
-    version='0.1.3',
+    version='0.1.4',
     description='opencensus-ext-django-middleware',
     classifiers=[
         'License :: OSI Approved :: MIT License',
